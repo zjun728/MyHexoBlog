@@ -9,6 +9,8 @@ unity 使用post通信方式实现登录注册功能
 
 <!--more-->
 
+```javascript
+
 using System.Collections;
 
 using System.Collections.Generic;
@@ -39,25 +41,17 @@ public class JsonTestScript : MonoBehaviour {
 
 
     IEnumerator SendPost(string _url, WWWForm _wForm)
-
     {
-
         WWW postData = new WWW(_url, _wForm);
 
         yield return postData;
 
         if (postData.error != null)
-
         {
-
             Debug.Log(postData.error);
-
         }
-
         else
-
         {
-
             string str = postData.text.ToString();
 
             JsonData data = JsonMapper.ToObject(str);
@@ -65,12 +59,11 @@ public class JsonTestScript : MonoBehaviour {
             print(data["msg"]);
 
             print(data["status"]); //由后端提供json数据
-
         }
-
     }
-
 }
+
+```
 
 ------------------------
 

@@ -9,11 +9,8 @@ HiAR 实现在移动端模型的旋转、缩放和播放动画等
 
 <!--more-->
 
-// 功能:
 
-// 挂载对象:
-
-//注意:
+```javascript
 
 using UnityEngine;
 
@@ -40,81 +37,50 @@ Touch oldTouch2;
 Animator m_ani;
 
 void Awake ()
-
 {
-
 m_ani = GetComponent ();
-
 }
 
 void Update ()
-
 {
-
 RotateByTouch ();
-
 }
 
 public void  Taunt ()
-
 {
-
 m_ani.SetTrigger ("taunt");
-
 AudioSource.PlayClipAtPoint (taunt, transform.position);
-
 }
 
 public void  Idle ()
-
 {
-
 m_ani.SetTrigger ("idle");
-
 AudioSource.PlayClipAtPoint (idle, transform.position);
-
 }
 
 public void  Death ()
-
 {
-
 m_ani.SetTrigger ("death");
-
 AudioSource.PlayClipAtPoint (death, transform.position);
-
 }
 
 public void  Joke ()
-
 {
-
 m_ani.SetTrigger ("joke");
-
 AudioSource.PlayClipAtPoint (joke, transform.position);
-
 }
 
 public void  Dancel ()
-
 {
-
 m_ani.SetTrigger ("dancel");
-
 AudioSource.PlayClipAtPoint (dancel, transform.position);
-
 }
 
 void RotateByTouch ()
-
 {
-
 //没有触摸，就是触摸点为0
-
 if (Input.touchCount <= 0) {
-
 return;
-
 }
 
 //单点触摸， 水平上下旋转
@@ -189,4 +155,4 @@ oldTouch2 = newTouch2;
 
 }
 
-简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+```

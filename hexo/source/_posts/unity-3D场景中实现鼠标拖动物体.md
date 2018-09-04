@@ -10,7 +10,7 @@ tags: [unity]
 
 <!--more-->
 
-
+```javascript
 
 using System.Collections;
 
@@ -20,11 +20,8 @@ using UnityEngine;
 
 public class MyTouchTest : MonoBehaviour {
 
-
     IEnumerator OnMouseDown()
-
     {
-
         //将物体由世界坐标系转化为屏幕坐标系 ，由vector3 结构体变量ScreenSpace存储，以用来明确屏幕坐标系Z轴的位置 
 
         Vector3 ScreenSpace = Camera.main.WorldToScreenPoint(transform.position);
@@ -36,9 +33,7 @@ public class MyTouchTest : MonoBehaviour {
         //当鼠标左键按下时 
 
         while (Input.GetMouseButton(0))
-
         {
-
             //得到现在鼠标的2维坐标系位置 
 
             Vector3 curScreenSpace = new Vector3(Input.mousePosition.x, Input.mousePosition.y, ScreenSpace.z);
@@ -52,9 +47,8 @@ public class MyTouchTest : MonoBehaviour {
             transform.position = CurPosition;
 
             yield return new WaitForFixedUpdate();
-
         }
-
     }
-
 }
+
+```
