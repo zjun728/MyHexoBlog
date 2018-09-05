@@ -6,18 +6,18 @@ menu:
 
 # SubNav
 subnav:
-  github: "#"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
-  #qq: "#"
+  github: "https://github.com/zjun728/zjun728.github.io"
+  #weibo: "#"
+  #rss: "#"
+  #zhihu: "#"
+  #qq: "503280155"
   #weixin: "#"
-  #jianshu: "#"
+  jianshu: "https://www.jianshu.com/u/a867c8380fab"
   #douban: "#"
   #segmentfault: "#"
   #bilibili: "#"
   #acfun: "#"
-  #mail: "mailto:litten225@qq.com"
+  #mail: "mailto:503280155@qq.com"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
@@ -121,7 +121,7 @@ smart_menu:
 
 friends:
   作者贴吧: https://tieba.baidu.com/f?kw=%E6%A2%A6%E6%9C%AA&fr=index
-  作者简书: https://www.jianshu.com/u/a867c8380fab
+  #作者简书: https://www.jianshu.com/u/a867c8380fab
   LiChuang的blog: https://dzjxlc.github.io
 
 aboutme: 我是谁？<br><br>我从哪里来？<br>我要到哪里去？

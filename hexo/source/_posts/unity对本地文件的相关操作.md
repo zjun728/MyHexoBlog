@@ -9,9 +9,8 @@ unity 对本地文件的一些操作，包括:创建文件夹，加载文件夹�
 
 <!--more-->
 
-```javascript
-
 # 一、在桌面创建文件夹 C:\Users\Administrator\Desktop(桌面路径)
+```javascript
 
         string path = "c:/Users/Administrator/Desktop/TestFolder"; //TestFolder要创建得文件夹的名字
 
@@ -25,7 +24,6 @@ unity 对本地文件的一些操作，包括:创建文件夹，加载文件夹�
 # 二、(1)读取文件夹中的图片（WWW 类加载） 图片名字为 testPicture.jpg
 
 ```javascript
-
 Texture2D texture;
 
  IEnumerator loadTexture() {
@@ -54,7 +52,9 @@ string imagePath = "c:/Users/Administrator/Desktop/TestFolder/testPicture.jpg";
 
 FileStream files = new FileStream(imagePath, FileMode.Open);
 
-byte[] imgByte = new byte[files.Length]; files.Read(imgByte, 0, imgByte.Length);
+byte[] imgByte = new byte[files.Length]; 
+
+files.Read(imgByte, 0, imgByte.Length);
 
 files.Close();
 
@@ -70,7 +70,6 @@ cube.GetComponent().material.mainTexture = newtexture;
 # 三、复制一个文件夹中的图片到另一个文件夹中
 
 ```javascript
-
         StartCoroutine(loadTexture()); //刚才加载出来的图片    yield return texture; 
 
         byte[] imagebytes = texture.EncodeToJPG();  //texture为加载出来的图片
@@ -88,7 +87,6 @@ cube.GetComponent().material.mainTexture = newtexture;
 # 四、读取文件夹中文件（图片）个数
 
 ```javascript
-
         string dirPath = "c:/Users/Administrator/Desktop/TestFolder";
 
         //判断给定的路径是否存在,如果不存在则退出
@@ -112,13 +110,12 @@ cube.GetComponent().material.mainTexture = newtexture;
         }
         print(number);
 		
-```	
+```
 -------------------------
 
 # 五、得到文件夹下的所有文件的名字
 
 ```javascript
-
         string dirPath = "c:/Users/Administrator/Desktop/TestFolder";
 
         DirectoryInfo dir = new DirectoryInfo(dirPath);
@@ -129,13 +126,13 @@ cube.GetComponent().material.mainTexture = newtexture;
         {
             print(file.Name);
         }
+		
 ```
 ----------------------------------
 
 # 六、得到文件夹下的所有文件的路径
 
 ```javascript
-
        string dirPath = "c:/Users/Administrator/Desktop/TestFolder";
 
         string[] dirs = Directory.GetFiles(dirPath);
@@ -144,17 +141,18 @@ cube.GetComponent().material.mainTexture = newtexture;
         {
             print(dirs[j]);
         }
+		
 ```
 ---------------------------------------
 
 # 七、删除文件夹中图片
 
 ```javascript
-
         string imagePath = "c:/Users/Administrator/Desktop/TestFolder/testPicture.jpg";
 
         if (File.Exists(imagePath))
         {
             File.Delete(imagePath);
         }
+		
 ```
