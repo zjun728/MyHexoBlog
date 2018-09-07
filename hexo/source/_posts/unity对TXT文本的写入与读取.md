@@ -1,5 +1,5 @@
 ---
-title: ‘unity对TXT文本的写入与读取
+title: unity对TXT文本的写入与读取
 date: 2017-08-20 14:30:12
 tags: [unity,txt]
 ---
