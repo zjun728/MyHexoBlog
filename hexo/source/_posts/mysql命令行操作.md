@@ -10,10 +10,11 @@ mysql命令行操作
 <!--more-->
 
 
-* ## 打开 MySQL 5.7 Command Line Client - Unicode
+* ### 打开 MySQL 5.7 Command Line Client - Unicode
 
-* ## 展示所有数据库：
+* ### 展示所有数据库：
 show databases;
+
 ```javascript
 mysql> show databases;
 +--------------------+
@@ -32,8 +33,9 @@ mysql> show databases;
 +--------------------+
 ```
 
-* ## 创建数据库（create database <数据库名>）： 
+* ### 创建数据库（create database <数据库名>）： 
 CREATE DATABASE mytest;
+
 ```javascript
 mysql> CREATE DATABASE mytest;
  Query OK, 1 row affected (0.00 sec) 
@@ -56,8 +58,9 @@ mysql> show databases;
 +--------------------+
 ```
 
-* ## 删除数据库(drop database <数据库名>) :
+* ### 删除数据库(drop database <数据库名>) :
  DROP DATABASE myTest;
+ 
 ```javascript
 mysql> DROP DATABASE myTest;
 Query OK, 0 rows affected (0.00 sec)
@@ -80,17 +83,19 @@ mysql> show databases;
 10 rows in set (0.00 sec)
 ```
 
-
-* ## 创建数据库： 
+* ### 创建数据库： 
 CREATE DATABASE mytest;
+
 ```javascript
 mysql> CREATE DATABASE mytest;
 Query OK, 1 row affected (0.00 sec)
 ```
 
-* ## 删除数据库：drop database <数据库名>
+* ### 删除数据库：drop database <数据库名>
 drop database mytest;
+
 ```javascript
+
 mysql> show databases;
 +--------------------+
 | Database           |
@@ -122,14 +127,13 @@ mysql> show databases;
 6 rows in set (0.00 sec)
 ```
 
-
-* ## 打开某一数据库：
+* ### 打开某一数据库：
 use mytest;
+
 ```javascript
 mysql> use mytest;
 Database changed
 ```
-
 
 创建数据库表：
 create table <表名> ( <字段名1> <类型1> [,..<字段名n> <类型n>])
@@ -149,8 +153,9 @@ mysql> CREATE TABLE `user` (
 Query OK, 0 rows affected (0.02 sec)
 ```
 
-* ## 删除数据库中的表：
+* ### 删除数据库中的表：
 DROP TABLE user;
+
 ```javascript
 mysql> show tables;
 +------------------+
@@ -169,9 +174,9 @@ mysql> show tables;
 Empty set (0.00 sec)
 ```
 
-
-* ## 展示数据库中所有的表：
+* ### 展示数据库中所有的表：
 show tables;
+
 ```javascript
 mysql> show tables;
 +------------------+
@@ -181,8 +186,9 @@ mysql> show tables;
 +------------------+
 ```
 
-* ## 展示数据库表结构：
+* ### 展示数据库表结构：
 desc user;
+
 ```javascript
 mysql> desc user;
 +----------+--------------+------+-----+---------+----------------+
@@ -195,10 +201,10 @@ mysql> desc user;
 3 rows in set (0.01 sec)
 ```
 
-
-* ## 插入一条数据：
+* ### 插入一条数据：
 insert into user(username,email) values('erming','erming@example.com');
 （或者：insert into user values(3,'erming','erming@example.com');）
+
 ```javascript
 mysql> insert into user(username,email) values('erming','erming@example.com');
 Query OK, 1 row affected (0.00 sec)
@@ -212,17 +218,17 @@ mysql>  select * from user;
 +----+----------+----------------------+
 ```
 
-
-* ## 删除一条数据： 
+* ### 删除一条数据： 
 delete from user where username='xiaoming';
+
 ```javascript
 mysql> delete from user where username='xiaoming';
 Query OK, 1 row affected (0.00 sec)
 ```
 
-
-* ## 查找表中某一条数据： 
+* ### 查找表中某一条数据： 
 select * from user where username='admin';
+
 ```javascript
 mysql> select * from user where username='admin';
 +----+----------+----------------------+
@@ -231,11 +237,13 @@ mysql> select * from user where username='admin';
 |  1 | admin    | xiaoming@example.com |
 +----+----------+----------------------+
 1 row in set (0.00 sec)
-
 ```
 
-* ## 查找表中所有数据：
+* ### 查找表中所有数据：
 select * from user;
+在命令窗口按照每条数据展示：
+select * from user \G;
+
 ```javascript
 mysql> select * from user;
 
@@ -254,8 +262,9 @@ mysql>  select * from user;
 +----+----------+-------------------+
 ```
 
-* ## 更新一条数据：
+* ### 更新一条数据：
 update user set email='xiaoming@example.com' where username='admin';
+
 ```javascript
 mysql> update user set email='xiaoming@example.com' where username='admin';
 Query OK, 1 row affected (0.00 sec)
@@ -268,4 +277,4 @@ mysql> select * from user;
 |  1 | admin    | xiaoming@example.com |
 +----+----------+----------------------+
 1 row in set (0.00 sec)
-```javascript
+```
