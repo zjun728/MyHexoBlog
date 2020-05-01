@@ -156,3 +156,134 @@ cube.GetComponent().material.mainTexture = newtexture;
         }
 		
 ```
+---------------------------------------
+
+八、得到当前文件夹根目录下所有的文件夹(子文件夹内的内容不会输出)或文件名字
+
+```javascript
+    /// <summary>
+
+    /// 得到当前文件夹根目录下所有的文件夹(子文件夹内的内容不会输出)或文件名字
+
+    /// </summary>
+
+    /// <param name="path"></param>
+
+    public List<string> GetFolderRootFileName(string path)
+
+    {
+
+        List<string> fileNameList = new List<string>();
+
+        string[] directoryEntries = Directory.GetFileSystemEntries(path);
+
+        // DirectoryInfo dir = new DirectoryInfo(dirPath);
+
+        // FileInfo[] files = dir.GetFiles("*", SearchOption.TopDirectoryOnly); //获取所有文件信息       
+
+        for (int i = 0; i < directoryEntries.Length; i++)
+
+        {
+
+            string fileName = directoryEntries[i].Split('\\')[1];
+
+            if (fileName.EndsWith(".meta"))
+
+            {
+
+                continue;
+
+            }
+
+            fileNameList.Add(fileName);
+
+        }
+
+        return fileNameList;
+
+    }
+```
+
+---------------------------------------
+
+九、得到当前文件夹下所有的子文件夹内的所有文件的路径（包括子文件夹文件）
+
+```javascript
+    /// <summary>
+
+    /// 得到当前文件夹下所有的子文件夹内的所有文件的路径（包括子文件夹文件）FileInfo.FullName/FileInfo.Name
+
+    /// </summary>
+
+    /// <param name="path"></param>
+
+    /// <returns></returns>
+
+  public List<FileInfo> GetAllFileinfoFromPath(string path)
+
+    {
+
+        List<FileInfo> fileinfo= new List<FileInfo>();
+
+        DirectoryInfo dir = new DirectoryInfo(path);
+
+        FileInfo[] files = dir.GetFiles("*", SearchOption.AllDirectories); //获取所有文件信息       
+
+        for (int i = 0; i < files.Length; i++)
+
+        {
+
+            if (files[i].Name.EndsWith(".meta"))
+
+            {
+
+                continue;
+
+            }
+
+          //  print(files[i].FullName); //文件路径
+
+          //  print(files[i].Name);    //文件名字
+
+            fileinfo.Add(files[i]);
+
+        }
+
+        return fileinfo;
+
+    }
+```
+
+---------------------------------------
+
+十、将文件夹某一文件复制到另一个文件夹中
+
+```javascript
+    /// <summary>
+
+    /// 文件复制
+
+    /// </summary>
+
+    /// <param name="targetDir"==要复制到的文件夹>  </param>
+
+    /// <param name="fileName"==要复制的文件名></param>
+
+    public static void CopyDirectory(string targetDir,string fileName)
+
+    {
+
+        //起始文件夹
+
+        string fromDir= "C:/Users/Administrator/Desktop/zhang/unity外部配置";
+
+        DirectoryInfo source = new DirectoryInfo(fromDir);
+
+        DirectoryInfo target = new DirectoryInfo(targetDir);
+
+        FileInfo[] files = source.GetFiles();
+
+        File.Copy(fromDir+"/"+ fileName, Path.Combine(targetDir, fileName), true);
+
+    }
+```
